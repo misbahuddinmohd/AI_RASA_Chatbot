@@ -1,0 +1,226 @@
+version: "3.1"
+
+stories:
+
+#----------------------------------------------
+# - story: password path
+#   steps:
+#   - intent: password
+#   - action: utter_password
+# - story: sad path 1
+#   steps:
+#   - intent: wifi_password
+#   - action: utter_wifi_password
+# - story: sad path 1
+#   steps:
+#   - intent: network_password
+#   - action: utter_network_password
+# - story: sad path 1
+#   steps:
+#   - intent: device_password
+#   - action: utter_device_password
+# #------------------------------------------------
+# - story: backup path
+#   steps:
+#   - intent: backup
+#   - action: utter_backup
+# - story: sad path 1
+#   steps:
+#   - intent: network_drive_backup
+#   - action: utter_network_drive_backup
+# - story: sad path 1
+#   steps:
+#   - intent: hard_disk_backup
+#   - action: utter_hard_disk_backup
+# - story: sad path 1
+#   steps:
+#   - intent: google_drive_backup
+#   - action: utter_google_drive_backup
+#---------------------------------------------------------------------------------------------------------------------------
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: thanks
+  steps:
+  - intent: thank_you
+  - action: utter_thank_you
+
+- story: User asks about resetting network password
+  steps:
+  - intent: network_password_reset
+  - action: utter_network_password_reset
+
+- story: User asks about troubleshooting network connectivity issues
+  steps:
+  - intent: network_connectivity_troubleshoot
+  - action: utter_network_connectivity_troubleshoot
+
+- story: User asks about accessing email remotely
+  steps:
+  - intent: email_access_remote
+  - action: utter_email_access_remote
+
+- story: User asks about installing software updates
+  steps:
+  - intent: software_updates_installation
+  - action: utter_software_updates_installation
+
+- story: User asks about mapping a network drive
+  steps:
+  - intent: network_drive_mapping
+  - action: utter_network_drive_mapping
+
+- story: User asks about backup and restore process
+  steps:
+  - intent: backup_restore_process
+  - action: utter_backup_restore_process
+
+- story: User asks about reporting a security incident
+  steps:
+  - intent: security_incident_reporting
+  - action: utter_security_incident_reporting
+
+- story: User asks about optimizing computer performance
+  steps:
+  - intent: computer_performance_optimization
+  - action: utter_computer_performance_optimization
+
+- story: User asks about the difference between hotfix and service pack
+  steps:
+  - intent: hotfix_vs_service_pack
+  - action: utter_hotfix_vs_service_pack
+
+- story: User asks about setting up a wireless printer
+  steps:
+  - intent: wireless_printer_setup
+  - action: utter_wireless_printer_setup
+
+- story: User asks about connecting to a remote desktop
+  steps:
+  - intent: remote_desktop_connection
+  - action: utter_remote_desktop_connection
+
+- story: User asks about requesting a new user account
+  steps:
+  - intent: new_user_account_request
+  - action: utter_new_user_account_request
+
+- story: User asks about setting up a VPN connection
+  steps:
+  - intent: vpn_connection_setup
+  - action: utter_vpn_connection_setup
+
+- story: User asks about clearing browser cache and cookies
+  steps:
+  - intent: browser_cache_and_cookies_clearing
+  - action: utter_browser_cache_and_cookies_clearing
+
+- story: User asks about firewalls and how they work
+  steps:
+  - intent: firewall_working
+  - action: utter_firewall_working
+
+- story: User asks about creating a strong password
+  steps:
+  - intent: strong_password_creation
+  - action: utter_strong_password_creation
+
+- story: User asks about two-factor authentication
+  steps:
+  - intent: two_factor_authentication
+  - action: utter_two_factor_authentication
+
+- story: User asks about checking antivirus updates
+  steps:
+  - intent: antivirus_updates_check
+  - action: utter_antivirus_updates_check
+
+- story: User asks about optimizing Wi-Fi signal strength
+  steps:
+  - intent: wifi_signal_optimization
+  - action: utter_wifi_signal_optimization
+#------------------------------------------------------------------------------------
+- story: Troubleshoot DNS server
+  steps:
+  - intent: troubleshoot_dns_server
+  - action: utter_troubleshoot_dns_server
+
+- story: Troubleshoot IP address conflict
+  steps:
+  - intent: troubleshoot_ip_conflict
+  - action: utter_troubleshoot_ip_conflict
+
+- story: Troubleshoot default gateway
+  steps:
+  - intent: troubleshoot_default_gateway
+  - action: utter_troubleshoot_default_gateway
+
+- story: Explain Error 404
+  steps:
+  - intent: explain_error_404
+  - action: utter_explain_error_404
+
+- story: Troubleshoot DNS probe finished no internet
+  steps:
+  - intent: troubleshoot_dns_probe
+  - action: utter_troubleshoot_dns_probe
+
+- story: Troubleshoot network cable unplugged
+  steps:
+  - intent: troubleshoot_network_cable_broken
+  - action: utter_troubleshoot_network_cable_broken
+
+- story: Troubleshoot network path not found
+  steps:
+  - intent: troubleshoot_network_path
+  - action: utter_troubleshoot_network_path
+#-----------------------------------------------------------------------------------------------
+- story: Secure Wi-Fi Network
+  steps:
+  - intent: query_network_security
+  - action: utter_explain_network_security
+
+- story: Check Network Adapter Drivers
+  steps:
+  - intent: query_network_adapter_drivers
+  - action: utter_explain_check_network_adapter_drivers
+
+- story: Forgot Wi-Fi Password
+  steps:
+  - intent: query_forgot_wifi_password
+  - action: utter_explain_forgot_wifi_password
+
+- story: Set Up Guest Network
+  steps:
+  - intent: query_setup_guest_network
+  - action: utter_explain_setup_guest_network
+
+- story: Configure Port Forwarding
+  steps:
+  - intent: query_configure_port_forwarding
+  - action: utter_explain_configure_port_forwarding
+
+
+

@@ -1,0 +1,26 @@
+[
+  {
+    "text": "There is a cat on the mat",
+    "intent": "cat_yes",
+    "intent_prediction": {
+      "name": "cat_no",
+      "confidence": 0.3216436207294464
+    }
+  },
+  {
+    "text": "cat is sitting on the mat",
+    "intent": "cat_yes",
+    "intent_prediction": {
+      "name": "cat_no",
+      "confidence": 0.38794630765914917
+    }
+  },
+  {
+    "text": "cat on mat",
+    "intent": "cat_yes",
+    "intent_prediction": {
+      "name": "cat_no",
+      "confidence": 0.36181676387786865
+    }
+  }
+]

@@ -1,0 +1,406 @@
+version: "3.1"
+
+nlu:
+
+# #-----------------------------------------  
+# - intent: password
+#   examples: |
+#     - reset password
+#     - forgot password
+#     - password
+
+# - intent: wifi_password
+#   examples: |
+#     - Wi-Fi password
+#     - wifi password
+#     - how to reset wifi password
+#     - reset my wifi password
+
+# - intent: network_password
+#   examples: |
+#     - network password
+#     - how to reset network password
+#     - reset my network password
+
+# - intent: device_password
+#   examples: |
+#     - device password
+#     - how to reset device password
+#     - reset my device password
+# # #-----------------------------------------      
+# - intent: backup
+#   examples: |
+#     - how to backup my files
+#     - how to backup my data
+#     - backup my data
+#     - data backup
+
+# - intent: network_drive_backup
+#   examples: |
+#     - network drive backup
+#     - how to backup my network drive
+
+# - intent: hard_disk_backup
+#   examples: |
+#     - hard disk backup
+#     - how to backup my hard disk
+
+# - intent: google_drive_backup
+#   examples: |
+#     - google drive backup
+#     - how to backup my google drive
+
+# #---------------------------------------------------------------------------------------------------------
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - good by
+    - see you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+
+- intent: mood_unhappy
+  examples: |
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - I'm so sad
+    - sad
+    - very sad
+    - I am unhappy
+    - unhappy
+    - not good
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: thank_you
+  examples: |
+    - thanks
+    - thank you
+    - Thanks
+    - Thank You 
+    - good work
+#-----------------------------------------------------------------------------------------------------------------------------
+
+- intent: assign_work
+  examples: |
+    - i'd like to assign a job to employee
+    - assign a work
+    - assign a job
+    - i want to assign a work to employee
+
+- intent: submit_query
+  examples: |
+    - i'd like to submit a query
+    - i'd like to submit a problem
+    - submit a query
+    - report a problem
+    - i have a query
+    - i have a problem
+
+- intent: network_password_reset
+  examples: |
+    - How do I reset my password?
+    - Can you guide me through the process of resetting my password?
+    - I forgot my password. What should I do?
+    - Help me with resetting my password.
+    - What are the steps to reset my password?
+    - How can I change my password?
+
+- intent: network_connectivity_troubleshoot
+  examples: |
+    - How can I troubleshoot network connectivity issues?
+    - My network is not working
+    - What steps should I follow to fix network connection problems?
+    - I'm having trouble connecting to the network. Any suggestions?
+    - Help me diagnose network connectivity issues.
+    - What can I do to resolve network connection problems?
+
+- intent: email_access_remote
+  examples: |
+    - How do I access my email remotely?
+    - Can I check my email from outside the office?
+    - What methods can I use to access my email from a remote location?
+    - I need to read my emails while I'm away. How can I do that?
+    - How can I access my work email from home?
+    - Is there a way to check my emails when I'm not in the office?
+
+- intent: software_updates_installation
+  examples: |
+    - How do I install software updates on my computer?
+    - What is the process for installing software updates?
+    - Can you guide me through updating my software?
+    - I want to make sure my computer has the latest software updates. How do I do that?
+    - How can I keep my software up to date?
+    - Is there a way to automate software updates?
+
+- intent: network_drive_mapping
+  examples: |
+    - How do I map a network drive?
+    - Can you explain the process of mapping a network drive?
+    - I need to access files on a shared network folder. How can I do that?
+    - What are the steps to connect to a network drive?
+    - Is there a way to access network drives easily?
+    - How can I make a network drive accessible on my computer?
+
+- intent: backup_restore_process
+  examples: |
+    - What is a backup and restore process?
+    - Can you explain how the backup and restore process works?
+    - I want to understand the concept of backup and restore. Can you help?
+    - How can I protect my data with backups?
+    - What are the steps involved in backing up and restoring data?
+    - Is there a way to recover lost data using backups?
+
+- intent: security_incident_reporting
+  examples: |
+    - How do I report a security incident?
+    - What should I do if I suspect a security breach?
+    - I think there might be a security incident. How do I report it?
+    - How can I notify the IT department about a security issue?
+    - Is there a way to report suspicious activities or unauthorized access?
+    - What are the steps for reporting security incidents?
+
+- intent: computer_performance_optimization
+  examples: |
+    - How can I optimize the performance of my computer?
+    - What can I do to improve my computer's performance?
+    - My computer is running slow. Any suggestions for optimization?
+    - How do I make my computer faster?
+    - Are there any steps I can take to optimize my system's performance?
+    - What are some tips for increasing computer performance?
+
+- intent: hotfix_vs_service_pack
+  examples: |
+    - What is the difference between a hotfix and a service pack?
+    - Can you explain the distinction between hotfixes and service packs?
+    - I'm confused about hotfixes and service packs. Can you clarify?
+    - What do hotfixes and service packs do, and how are they different?
+    - Are hotfixes and service packs the same thing?
+    - How are software updates categorized as hotfixes or service packs?
+
+- intent: wireless_printer_setup
+  examples: |
+    - How do I set up a wireless printer?
+    - Can you guide me through the process of connecting a wireless printer?
+    - I want to use a wireless printer. What steps should I follow?
+    - What are the steps to install a wireless printer?
+    - Is there a way to connect a printer to Wi-Fi without cables?
+    - How can I make my printer wireless?
+
+- intent: remote_desktop_connection
+  examples: |
+    - How do I connect to a remote desktop?
+    - Can you explain the process of remote desktop connection?
+    - I need to access my computer remotely. What should I do?
+    - What are the steps for establishing a remote desktop connection?
+    - Is there a way to control my computer from a different location?
+    - How can I remotely access my desktop?
+    - remote desktop connection
+
+- intent: new_user_account_request
+  examples: |
+    - How can I request a new user account?
+    - What is the process for getting a new user account?
+    - I need to create a new user account. How do I proceed?
+    - Can you help me with requesting a new user account?
+    - What are the steps involved in getting a new user account?
+    - How to create a new user account?
+
+- intent: vpn_connection_setup
+  examples: |
+    - How do I set up a virtual private network (VPN) connection?
+    - Can you guide me through the process of configuring a VPN connection?
+    - I want to establish a VPN connection. What steps should I follow?
+    - What are the requirements for setting up a VPN connection?
+    - Is there a way to securely connect to a private network using a VPN?
+    - How can I access resources through a VPN?
+    - How to setup a VPN
+
+- intent: browser_cache_and_cookies_clearing
+  examples: |
+    - How do I clear browser cache and cookies?
+    - Can you guide me through the process of clearing browser cache and cookies?
+    - I want to delete my browser's cache and cookies. What should I do?
+    - What are the steps to remove cache and cookies from my browser?
+    - Is there a way to reset my browser's cache and cookies?
+    - How can I ensure a clean browsing session?
+
+- intent: firewall_working
+  examples: |
+    - What is a firewall and how does it work?
+    - Can you explain the concept and functioning of a firewall?
+    - I'm not sure how firewalls function. Can you provide an overview?
+    - What are firewalls and how do they protect my system?
+    - How does a firewall secure my computer or network?
+    - Can you describe the purpose and operation of firewalls?
+
+- intent: strong_password_creation
+  examples: |
+    - How do I create a strong password?
+    - Can you provide some tips for generating a secure password?
+    - I want to set a strong password. What guidelines should I follow?
+    - What are the requirements for creating a robust password?
+    - Is there a way to make sure my password is strong and secure?
+    - How can I generate a password that is difficult to crack?
+
+- intent: two_factor_authentication
+  examples: |
+    - What is two-factor authentication (2FA)?
+    - Can you explain the concept of two-factor authentication?
+    - How does two-factor authentication enhance security?
+    - Is two-factor authentication necessary? How does it work?
+    - What are the benefits of using two-factor authentication?
+    - How can I enable two-factor authentication for my accounts?
+    - two factor authentication
+    - 2 factor authentication
+
+- intent: antivirus_updates_check
+  examples: |
+    - How do I check if my computer has the latest antivirus updates?
+    - Can you guide me through the process of checking antivirus updates?
+    - I want to ensure my antivirus is up to date. What should I do?
+    - What are the steps to verify antivirus update status?
+    - Is there a way to confirm if my antivirus definitions are current?
+    - How can I check for antivirus updates on my computer?
+    - latest antivirus updates
+
+- intent: wifi_signal_optimization
+  examples: |
+    - How can I optimize my Wi-Fi signal strength?
+    - What are some tips for improving Wi-Fi signal strength?
+    - My Wi-Fi signal is weak. Any suggestions for optimization?
+    - How do I enhance the performance of my wireless network?
+    - Is there a way to boost my Wi-Fi signal at home?
+    - What can I do to improve my wireless connectivity?
+    - increase wifi speed
+#------------------------------------------------------------------------------------------------
+- intent: troubleshoot_dns_server
+  examples: |
+    - How do I resolve the DNS server not responding error?
+    - My computer is showing DNS server not responding, what should I do?
+    - What steps can I take to troubleshoot the DNS server not responding error?
+    - Help me with the DNS server not responding issue.
+
+- intent: troubleshoot_ip_conflict
+  examples: |
+    - How do I troubleshoot an IP address conflict error?
+    - My computer is showing an IP address conflict, what should I do?
+    - What steps can I take to resolve the IP address conflict error?
+    - Help me troubleshoot the IP address conflict issue.
+
+- intent: troubleshoot_default_gateway
+  examples: |
+    - How do I fix a Default gateway not available error?
+    - My computer is showing a Default gateway not available error, what should I do?
+    - What steps can I take to troubleshoot the Default gateway not available error?
+    - Help me resolve the Default gateway not available issue.
+
+- intent: explain_error_404
+  examples: |
+    - What does Error 404 - Page Not Found mean?
+    - Can you explain the meaning of Error 404 Page Not Found?
+    - I encountered an Error 404 - Page Not Found, what does it signify?
+    - I am getting Error 404 Page Not Found.
+
+- intent: troubleshoot_dns_probe
+  examples: |
+    - How do I troubleshoot a DNS probe finished no internet error?
+    - My computer is showing a DNS probe finished no internet error, what should I do?
+    - What steps can I take to resolve the DNS probe finished no internet error?
+    - Help me troubleshoot the DNS probe finished no internet issue.
+
+- intent: troubleshoot_network_cable_broken
+  examples: |
+    - How can I troubleshoot a Network cable is not properly plugged in or may be broken error?
+    - My computer is showing a Network cable is not properly plugged in or may be broken error, what should I do?
+    - What steps can I take to fix the Network cable is not properly plugged in or may be broken issue?
+    - Help me troubleshoot the Network cable is not properly plugged in or may be broken error.
+    - How can I troubleshoot a Network cable unplugged error?
+    - My computer is showing a Network cable unplugged error, what should I do?
+    - What steps can I take to fix the Network cable unplugged issue?
+    - Help me troubleshoot the Network cable unplugged error.
+
+- intent: troubleshoot_network_path
+  examples: |
+    - How do I resolve a Network path not found error?
+    - My computer is showing a Network path not found error, what should I do?
+    - What steps can I take to troubleshoot the Network path not foun" error?
+    - Help me fix the Network path not found issue.
+#-------------------------------------------------------------------------------------------------
+- intent: query_network_security
+  examples: |
+    - How do I secure my Wi-Fi network from unauthorized access?
+    - What are the steps to protect my Wi-Fi network from unauthorized access?
+    - security of my Wi-Fi network?
+    - what are the measure to protect my network from malware?
+    - what are the measure to protect my network from hacking?
+- intent: query_network_adapter_drivers
+  examples: |
+    - How can I check if my network adapter drivers are up to date?
+    - Are my network adapter drivers up to date?
+    - Steps to verify network adapter driver updates?
+
+- intent: query_forgot_wifi_password
+  examples: |
+    - I forgot my Wi-Fi password?
+    - How can I recover my Wi-Fi password?
+    - Steps to reset Wi-Fi password?
+    - how to reset wifi password?
+    - wifi password reset
+
+- intent: query_setup_guest_network
+  examples: |
+    - How do I create a guest network for visitors?
+    - Steps to set up a separate network for guests?
+    - How to provide limited access to visitors on my Wi-Fi?
+
+- intent: query_configure_port_forwarding
+  examples: |
+    - How can I enable port forwarding to access a specific device?
+    - Steps to set up port forwarding for device access?
+    - Configuring port forwarding for a device on the network?
+
+
+
+

@@ -1,0 +1,471 @@
+version: "3.1"
+
+intents:
+# - password
+# - wifi_password
+# - network_password
+# - device_password
+# - backup
+# - network_drive_backup
+# - hard_disk_backup
+# - google_drive_backup
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_unhappy
+  - bot_challenge
+  - thank_you
+  - assign_work
+  - submit_query
+  - hello_world
+  - network_password_reset
+  - network_connectivity_troubleshoot
+  - email_access_remote
+  - software_updates_installation
+  - network_drive_mapping
+  - backup_restore_process
+  - security_incident_reporting
+  - computer_performance_optimization
+  - hotfix_vs_service_pack
+  - wireless_printer_setup
+  - remote_desktop_connection
+  - new_user_account_request
+  - vpn_connection_setup
+  - browser_cache_and_cookies_clearing
+  - firewall_working
+  - strong_password_creation
+  - two_factor_authentication
+  - antivirus_updates_check
+  - wifi_signal_optimization
+#------------------------------------------------
+  - troubleshoot_dns_server
+  - troubleshoot_ip_conflict
+  - troubleshoot_default_gateway
+  - explain_error_404
+  - troubleshoot_dns_probe
+  - troubleshoot_network_cable_broken
+  - troubleshoot_network_path
+#---------------------------------------------------------
+  - query_network_security
+  - query_network_adapter_drivers
+  - query_forgot_wifi_password
+  - query_setup_guest_network
+  - query_configure_port_forwarding
+
+slots:
+  employee_id:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: work_form
+           requested_slot: employee_id
+  work_description:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: work_form
+           requested_slot: work_description
+  device_id:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: query_form
+           requested_slot: device_id
+  query:
+    type: text
+    influence_conversation: true
+    mappings:
+      - type: from_text
+        conditions:
+         - active_loop: query_form
+           requested_slot: query
+
+forms:
+  work_form:
+    required_slots:
+      - employee_id
+      - work_description
+  query_form:
+    required_slots:
+      - device_id
+      - query
+
+#--------------------------------------------------------  
+
+responses:
+
+#  utter_password:
+#  - text: "1. To reset wifi password enter 'wifi password'\n
+#  2. To reset network password enter 'network password'\n
+#  3. To reset device password enter 'device password' "
+
+#  utter_wifi_password:
+#  - text: "reset wifi password"
+
+#  utter_network_password:
+#  - text: "reset network password"
+
+#  utter_device_password:
+#  - text: "reset device password"
+
+#  utter_backup:
+#  - text: "1. To backup network drive enter 'network drive backup'\n
+#  2. To backup hard disk enter 'hard disk backup'\n
+#  3. To backup google drive enter 'google drive backup' "
+
+#  utter_network_drive_backup:
+#  - text: "network drive backup"
+
+#  utter_hard_disk_backup:
+#  - text: "hard disk backup"
+
+#  utter_google_drive_backup:
+#  - text: "google drive backup"
+#----------------------------------------------------------------------------------------------------------------------------
+
+  utter_greet:
+  - text: "Hey! what do you want to search for"
+
+  utter_cheer_up:
+  - text: "Here is something to cheer you up:"
+    image: "https://i.imgur.com/nGF1K8f.jpg"
+
+  utter_did_that_help:
+  - text: "Did that help you?"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_iamabot:
+  - text: "I am a bot, powered by Rasa."
+
+  utter_thank_you:
+  - text: "appreciated :)"
+
+  utter_ask_employee_id:
+  - text: "enter employee id"
+
+  utter_ask_work_description:
+  - text: "enter work description"
+
+  utter_slots_values_of_work:
+  - text: "The employee id '{employee_id}' has the been assigned the work '{work_description}'."
+
+  utter_ask_device_id:
+  - text: "enter your device id"
+
+  utter_ask_query:
+  - text: "enter your query"
+
+  utter_slots_values_of_query:
+  - text: "The device id '{device_id}' has the query '{query}'. Your query is being sent to our team. They will contact you through mail as soon as possible."
+
+  utter_out_of_knowledge:
+  - text: "I'm sorry, The query is out of my knowledge. I will forward this query to the team, they will contact you through mail."
+
+  utter_network_password_reset:
+  - text: "To reset your network password, you can follow these steps:\n
+1. Go to the password reset portal or contact the IT service desk.\n
+2. Provide the necessary identification or authentication details.\n
+3. Follow the prompts to reset your password.\n
+4. Create a new password that meets the specified complexity requirements.\n
+5. Confirm the new password.\n
+6. Log in to your account using the new password."
+
+  utter_network_connectivity_troubleshoot:
+  - text: "Here are some steps to troubleshoot network connectivity issues:\n
+1. Check physical connections: Ensure all cables are securely plugged in and devices are powered on.\n
+2. Restart networking devices: Power cycle your modem, router, and switches.\n
+3. Check IP settings: Verify that your device is configured with the correct IP address, subnet mask, and gateway.\n
+4. Disable/enable network adapter: Temporarily disable and re-enable your network adapter.\n
+5. Check firewall settings: Ensure that necessary ports are open and firewall rules allow network traffic.\n
+6. Run network diagnostics: Use built-in network troubleshooting tools or network diagnostic commands.\n
+7. Update network drivers: Make sure you have the latest drivers for your network adapter.\n
+8. Contact IT support: If the issue persists, reach out to your IT support team for further assistance."
+
+  utter_email_access_remote:
+  - text: "To access your email remotely, you can use one of the following methods:\n
+1. Webmail: Open a web browser and navigate to your organization's webmail portal. Enter your credentials to access your email account.\n
+2. VPN (Virtual Private Network): Connect to your organization's VPN to establish a secure connection. Once connected, you can access your email client or webmail as if you were on the internal network.\n
+3. Email client configuration: Configure your email client (e.g., Outlook, Thunderbird) to connect to your organization's email server using the appropriate settings provided by your IT department."
+
+  utter_software_updates_installation:
+  - text: "The process of installing software updates can vary depending on the operating system and software:\n
+1. Check for updates: Open the software or go to the system settings to check for available updates.\n
+2. Download updates: If updates are available, initiate the download process.\n
+3. Install updates: Once the download is complete, follow the prompts to install the updates. You may need to close the software or restart your computer for the changes to take effect.\n 
+4. Configure settings: After installation, review any new settings or options introduced by the update and adjust them as necessary."
+
+  utter_network_drive_mapping:
+  - text: "To map a network drive, follow these steps:\n
+1. Open 'File Explorer' or 'Windows Explorer' on your computer.\n
+2. Click on the 'This PC' or 'Computer' option.\n
+3. Click on the 'Map network drive' button in the toolbar.\n
+4. In the 'Map Network Drive' window, choose a drive letter from the dropdown menu.\n
+5. Enter the network path of the shared drive you want to map.\n
+6. Check the 'Reconnect at sign-in' box if you want the drive to be automatically mapped every time you sign in.\n
+7. Click 'Finish' to complete the mapping process.\n
+8. The network drive will now appear under 'This PC' or 'Computer' as the assigned drive letter."
+
+  utter_backup_restore_process:
+  - text: "The process for backup and restore can vary depending on the system and backup solution in use. Here are some general steps:
+Backup:\n
+1. Identify the files or data to be backed up.\n
+2. Choose a backup solution or method, such as local storage, cloud storage, or a backup software.\n
+3. Configure the backup settings, including the frequency and type of backup (full, incremental, or differential).\n
+4. Initiate the backup process and ensure it completes successfully.\n
+Restore:
+1. Identify the backup source (local or cloud) and locate the backup files.\n
+2. Choose the restore method based on the backup solution (e.g., using backup software or manual file copy).\n
+3. Follow the prompts to restore the desired files or data to the original or alternate location.\n
+4. Verify the restored data for integrity and completeness."
+
+  utter_security_incident_reporting:
+  - text: "If you encounter a security incident, it's important to report it promptly to the appropriate channels. Here's what you can do:
+  Contact your organization's IT security team or the designated incident response team.Provide them with all the relevant details about the incident, such as the nature of the incident, any suspicious activities or behaviors observed, and the systems or assets affected. 
+  Follow any specific reporting  procedures or guidelines provided by your organization. Cooperate with the IT security team during the investigation and provide any additional information or assistance they require.\n
+Remember, reporting security incidents helps protect your organization's data and systems and enables the appropriate actions to mitigate the impact."
+
+  utter_computer_performance_optimization:
+  - text: "To optimize your computer's performance, you can try the following steps:\n
+1. Close unnecessary programs: Close any unused applications running in the background.\n
+2. Free up disk space: Delete temporary files, unwanted applications, and files you no longer need.\n
+3. Run disk cleanup: Use the built-in disk cleanup utility to remove unnecessary files and optimize disk usage.\n
+4. Disable startup programs: Remove unnecessary programs from the startup list to reduce the boot time.\n
+5. Update software and drivers: Keep your operating system, software, and drivers up to date with the latest patches and updates.\n
+6. Scan for malware: Run a full system scan with a reliable antivirus or antimalware program to detect and remove any threats.\n
+7. Adjust visual effects: Optimize visual effects settings in the system preferences to enhance performance.\n
+8. Increase RAM: If your computer is still slow, consider upgrading your RAM for better performance.\n
+If the issue persists, it's recommended to consult with your organization's IT support for further assistance tailored to your specific system."
+
+  utter_hotfix_vs_service_pack:
+  - text: "Hotfixes and service packs are both software updates, but they differ in scope and release frequency:\n
+Hotfix: A hotfix is a small, targeted software patch designed to address specific issues or vulnerabilities. Hotfixes are usually released between regular software updates or service packs to provide immediate solutions for critical problems.\n
+Service Pack: A service pack is a comprehensive collection of updates, bug fixes, and improvements for an operating system or software package. It includes multiple hotfixes and updates accumulated over a period of time. Service packs are typically released less frequently and may introduce new features along with bug fixes and security enhancements.\n 
+It's important to regularly install both hotfixes and service packs to ensure your system is up to date and protected against known vulnerabilities."
+
+  utter_wireless_printer_setup:
+  - text: "To set up a wireless printer, follow these general steps:\n
+1. Ensure your wireless printer is powered on and connected to the same Wi-Fi network as your computer.\n
+2. Install the printer drivers: Insert the printer installation disc or download the latest drivers from the manufacturer's website.\n
+3. Run the printer setup software: Follow the on-screen prompts to configure the wireless settings for your printer.\n
+4. Connect the printer to the Wi-Fi network: Enter the network name (SSID) and password (if applicable) using the printer's control panel.\n
+5. Test the connection: Print a test page or document to verify that the printer is successfully connected to your computer.\n
+Note: The exact steps may vary depending on the printer model and manufacturer. Refer to the printer's user manual or online documentation for detailed instructions."
+
+  utter_remote_desktop_connection:
+  - text: "To establish a remote desktop connection, follow these steps:\n
+1. Ensure both the host (remote) computer and the client (local) computer are connected to the internet.\n
+2. Enable Remote Desktop: On the host computer, go to 'System Settings' and enable Remote Desktop.\n
+3. Note down the host computer's IP address or hostname.\n
+4. On the client computer, open the Remote Desktop application (e.g., Remote Desktop Connection on Windows).\n
+5. Enter the host computer's IP address or hostname in the appropriate field.\n
+6. Click 'Connect' and enter the host computer's username and password when prompted.\n
+7. The remote desktop session should start, allowing you to access and control the host computer from your client computer.\n
+Note: Remote Desktop may require additional configuration, such as port forwarding or firewall settings. Consult your IT department or refer to the operating system's documentation for specific instructions."
+
+  utter_new_user_account_request:
+  - text: "To request a new user account, please follow these steps:\n
+1. Contact your organization's IT service desk or department responsible for user account management.\n
+2. Provide the necessary information, such as your full name, job title, department, and any other required details.\n
+3. Specify the level of access or permissions needed for the account (e.g., standard user, administrator).\n
+4. If applicable, provide any specific software or network drive access requirements.\n
+5. Follow any additional instructions or paperwork provided by the IT team.\n
+6. They will process your request and create a new user account for you."
+
+  utter_vpn_connection_setup:
+  - text: "To set up a VPN connection, follow these general steps:\n
+1. Obtain VPN configuration details: Contact your IT department or service provider to get the necessary VPN settings, including the VPN server address, authentication method, and any required credentials.\n
+2. Open the VPN settings: On your device, go to the network or VPN settings.\n
+3. Add a new VPN connection: Choose the option to add a new VPN connection or profile.\n
+4. Enter the VPN details: Input the VPN server address and configure the authentication method (e.g., username/password, certificate).\n
+5. Save the settings: Save the VPN connection settings and exit the configuration menu.\n
+6. Connect to the VPN: Open the VPN connection you just created and enter the appropriate credentials.\n
+7. Wait for the connection to establish: Once connected, your device will be securely connected to the private network via the VPN.\n
+Note: The exact steps and options may vary depending on your device's operating system and VPN client. Consult your IT department or refer to the documentation provided by your VPN service for specific instructions."
+
+  utter_browser_cache_and_cookies_clearing:
+  - text: "To clear the cache and cookies in your browser, follow these general steps:\n
+1. Open your browser's settings or preferences menu.\n
+2. Navigate to the privacy or browsing history section.\n
+3. Clear cache: Look for an option to clear the browser cache or temporary files. Click on it to initiate the cache clearing process.\n
+4. Clear cookies: Locate the option to manage cookies or browse the list of stored cookies. Delete the cookies associated with the desired website(s) or choose to clear all cookies.\n
+5. Confirm the action: Confirm your selection to clear the cache and cookies.\n
+6. Restart the browser: Close and reopen the browser for the changes to take effect.\n
+Note: The steps may vary slightly depending on the browser you are using. Consult your browser's documentation or online help resources for specific instructions."
+
+  utter_firewall_working:
+  - text: "A firewall is a security measure that helps protect your computer or network by monitoring and controlling incoming and outgoing network traffic based on predefined security rules. Here's a simplified explanation of how a firewall works:\n
+1. Traffic inspection: The firewall examines packets of data flowing through the network.\n
+2. Rule evaluation: The firewall compares the characteristics of the packets against its set of rules or policies.\n
+3. Rule application: If a packet matches a specific rule (e.g., allowed traffic), the firewall permits it to pass through. Otherwise, it blocks or denies the packet.\n
+4. Logging and reporting: The firewall keeps logs of the traffic it has processed, allowing for monitoring and analysis of network activity.\n
+Firewalls can be implemented as hardware devices or software programs. They act as a barrier between your computer or network and potential threats from the internet, helping to prevent unauthorized access and protect against malicious activity."
+
+  utter_strong_password_creation:
+  - text: "Creating a strong password helps protect your accounts and data. Here are some tips for creating strong passwords:\n
+Length: Use a password with at least 8-12 characters or more.\n
+Complexity: Include a mix of uppercase and lowercase letters, numbers, and special characters.\n
+Avoid personal information: Don't use easily guessable information like your name, birthdate, or phone number.\n
+Avoid common patterns: Don't use simple patterns like '123456' or 'password.'\n
+Unique passwords: Use a different password for each account or service you use.\n
+Password managers: Consider using a password manager tool to securely store and manage your passwords.\n
+Remember to change your passwords periodically and never share them with others."
+
+  utter_two_factor_authentication:
+  - text: "Two-factor authentication (2FA) provides an additional layer of security by requiring two forms of verification to access an account. Here's how it works:\n
+1. Enable 2FA: Go to your account settings or security settings for the specific service or application.\n
+2. Choose verification method: Select the type of second factor you want to use, such as SMS, email, authenticator app, or hardware token.\n
+3. Set up second factor: Follow the instructions to link your account with the chosen verification method. This may involve scanning a QR code, entering a verification code, or confirming your identity.\n
+4. Authenticate with 2FA: When logging in, you'll be prompted to provide the second factor in addition to your password.\n
+5. Verification options: Depending on the service, you may have the option to receive a verification code via SMS or email, or use a time-based one-time password (TOTP) generated by an authenticator app.\n
+Using 2FA adds an extra layer of security and makes it more difficult for unauthorized individuals to access your accounts."
+
+  utter_antivirus_updates_check:
+  - text: "To check for antivirus updates, follow these general steps:\n
+1. Open your antivirus software.\n
+2. Look for an option such as 'Update' or 'Check for updates.'\n
+3. Click on the appropriate option to check for updates.\n
+4. If updates are available, follow the prompts to download and install them.\n
+5. Ensure that your antivirus software's automatic update feature is enabled for future updates.\n
+Regularly updating your antivirus software helps protect your computer from the latest threats and vulnerabilities."
+
+  utter_wifi_signal_optimization:
+  - text: "To optimize your Wi-Fi signal, try the following tips:\n
+1. Position the router centrally: Place your router in a central location in your home or office to ensure a better coverage area.\n
+2. Reduce interference: Keep the router away from other electronic devices that may cause interference, such as cordless phones, baby monitors, and microwaves.\n
+3. Adjust antenna position: If your router has adjustable antennas, experiment with different angles to find the optimal signal direction.\n
+4. Use the 5 GHz band: If your router supports it, connect devices to the 5 GHz band instead of the 2.4 GHz band for faster speeds and reduced interference.\n
+5. Update router firmware: Check for firmware updates for your router and install them to ensure optimal performance and security."
+
+#--------------------------------------------------------------------------------------------------------------------------------------------------
+  utter_troubleshoot_dns_server:
+  - text: "To troubleshoot 'DNS server not responding' error, you can follow these steps:\n
+  1. Restart your router and modem.\n
+  2. Flush the DNS cache.\n
+  3. Change the DNS server settings.\n
+  4. Disable any VPN or proxy connections.\n5. Temporarily disable your firewall.\n
+  If the problem continues, contact your ISP or network administrator for help."
+
+  utter_troubleshoot_ip_conflict:
+  - text: "To troubleshoot 'IP address conflict' issue, try these steps:\n
+  1. Release and renew your IP address.\n
+  2. Restart your router and devices.\n
+  3. Check for any duplicate IP addresses.\n
+  4. Disable static IP addresses.\n
+  5. Reset your network settings.\n
+  If the problem persists, consult your network administrator or ISP."
+
+  utter_troubleshoot_default_gateway:
+  - text: "If you're facing issues with the default gateway, try the following steps:\n
+  1. Restart your router and modem.
+  2. Verify the default gateway settings.
+  3. Reset the default gateway.\n
+  4. Check for any IP conflicts.\n
+  5. Contact your network administrator or ISP for further assistance."
+
+  utter_explain_error_404:
+  - text: "The 'Error 404: Page Not Found' typically occurs when the requested webpage or resource cannot be found on the server. It may happen due to a broken or dead link, incorrect URL, or the webpage/resource being removed or moved.\n
+  To resolve this issue, you can try the following:\n
+  1. Refresh the page.\n
+  2. Double-check the URL for typos.\n
+  3. Search for the content using a search engine.\n
+  4. Clear your browser cache and cookies.\n
+  If the problem persists, it's recommended to contact the website administrator for further assistance."
+
+  utter_troubleshoot_dns_probe:
+  - text: "If you encounter the 'DNS_PROBE_FINISHED_NO_INTERNET' error, you can attempt these troubleshooting steps:\n
+  1. Restart your router and modem.\n
+  2. Flush the DNS cache.\n
+  3. Change the DNS server settings.\n
+  4. Disable any VPN or proxy connections.\n
+  5. Temporarily disable your firewall.\n
+  If the issue continues, you may need to contact your ISP or network administrator for further support."
+
+  utter_troubleshoot_network_cable_broken:
+  - text: "If you receive a 'Network cable unplugged' message, try these steps:\n
+  1. Check the cable connections at both ends.\n
+  2. Replace the network cable with a known working cable.\n
+  3. Restart your router and devices.\n
+  4. Test connectivity with a different device.\n
+  5. Contact your network administrator or ISP if the problem persists."
+
+  utter_troubleshoot_network_path:
+  - text: "If you're encountering the 'Network path not found' error, try these steps:\n
+  1. Check if the device you're trying to access is powered on and connected to the network.\n
+  2. Verify the network address and path.\n
+  3. Ensure that the necessary network services are running.\n
+  4. Reset the network settings on the affected device.\n
+  If the issue persists, contact your network administrator or IT support."
+
+#-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  utter_explain_network_security:
+  - text: "To secure your Wi-Fi network from unauthorized access, you can follow these steps:\n
+  1. Change the default administrator password for your router.\n
+  2. Enable WPA2 or WPA3 encryption for your Wi-Fi network.\n
+  3. Use a strong and unique Wi-Fi network password.\n
+  4. Disable Wi-Fi Protected Setup (WPS).\n
+  5. Enable network encryption and authentication.\n
+  6. Regularly update your router's firmware.\n
+  By implementing these measures, you can enhance the security of your Wi-Fi network."
+
+  utter_explain_check_network_adapter_drivers:
+  - text: "To check if your network adapter drivers are up to date, you can use the following steps:\n
+  1. Open the Device Manager on your computer.\n
+  2. Expand the 'Network adapters' category.\n
+  3. Locate your network adapter and right-click on it.\n
+  4. Select 'Properties' from the context menu.\n
+  5. In the Properties window, go to the 'Driver' tab.\n
+  6. Click on the 'Update Driver' button.\n
+  Windows will check for the latest driver updates for your network adapter and install them if available. Alternatively, you can visit the manufacturer's website to manually download and install the latest drivers."
+
+  utter_explain_forgot_wifi_password:
+  - text: "If you forgot the Wi-Fi password for your home network, you can try the following methods to recover or reset it:\n
+  1. Check the Wi-Fi router or modem for a sticker with the default Wi-Fi password.\n
+  2. Access the router's configuration page using a web browser and retrieve the Wi-Fi password from the settings.\n
+  3. Reset the router to its factory default settings, which will remove any custom settings including the Wi-Fi password.\n
+  4. Contact your Internet Service Provider (ISP) for assistance in recovering or resetting the Wi-Fi password.\n
+  Please note that resetting the router will disconnect all devices from the network, and you'll need to set up the Wi-Fi network again."
+
+  utter_explain_setup_guest_network:
+  - text: "To set up a guest network and provide limited access to visitors, you can follow these steps:\n
+  1. Access your router's configuration page using a web browser.\n
+  2. Look for the 'Guest Network' or 'Guest Wi-Fi' settings.\n
+  3. Enable the guest network feature.\n
+  4. Set a separate SSID (network name) for the guest network.\n
+  5. Choose a secure password for the guest network.\n
+  6. Configure any additional settings such as network isolation or bandwidth limitations.\n
+  7. Save the settings and exit the configuration page.\n
+  Visitors can now connect to the guest network using the provided SSID and password, keeping them separate from your main network."
+
+  utter_explain_configure_port_forwarding:
+  - text: "To set up port forwarding and access a specific device on your network, you can perform the following steps:\n
+  1. Determine the IP address of the device you want to access.\n
+  2. Access your router's configuration page using a web browser.\n
+  3. Look for the 'Port Forwarding' or 'Virtual Servers' settings.\n
+  4. Add a new port forwarding rule.\n
+  5. Specify the protocol (TCP or UDP) and port number to forward.\n
+  6. Enter the IP address of the device as the destination.\n
+  7. Save the settings and exit the configuration page.\n
+  Now, you can access the specified device by using the external IP address of your router and the forwarded port number."
+
+#-------------------------------------------------------------------------------------------------------------------------------------------------
+actions:
+  - utter_slots_values_of_work
+  - utter_slots_values_of_query
+  - utter_out_of_knowledge
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+ 

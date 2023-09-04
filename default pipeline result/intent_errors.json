@@ -1,0 +1,50 @@
+[
+  {
+    "text": "are you a bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "affirm",
+      "confidence": 0.1350698620080948
+    }
+  },
+  {
+    "text": "am I talking to a bot?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "firewall_working",
+      "confidence": 0.2537141442298889
+    }
+  },
+  {
+    "text": "am I talking to a human?",
+    "intent": "bot_challenge",
+    "intent_prediction": {
+      "name": "firewall_working",
+      "confidence": 0.18893574178218842
+    }
+  },
+  {
+    "text": "I forgot my Wi-Fi password. What should I do?",
+    "intent": "query_forgot_wifi_password",
+    "intent_prediction": {
+      "name": "network_password_reset",
+      "confidence": 0.5081300139427185
+    }
+  },
+  {
+    "text": "there is no cat on the mat",
+    "intent": "cat_no",
+    "intent_prediction": {
+      "name": "cat_yes",
+      "confidence": 0.5424503684043884
+    }
+  },
+  {
+    "text": "no cat on mat",
+    "intent": "cat_no",
+    "intent_prediction": {
+      "name": "cat_yes",
+      "confidence": 0.558918833732605
+    }
+  }
+]

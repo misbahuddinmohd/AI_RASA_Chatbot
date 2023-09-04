@@ -1,0 +1,10 @@
+[
+  {
+    "text": "Ways to enhance the security of my Wi-Fi network?",
+    "intent": "query_network_security",
+    "intent_prediction": {
+      "name": "wifi_signal_optimization",
+      "confidence": 0.20108163356781006
+    }
+  }
+]
